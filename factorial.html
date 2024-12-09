@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>factorial</title>
+</head>
+<body>
+    <h1>FACTORIAL</h1>
+    <script>
+        const x= prompt("enter the number");
+        document.write("the factorial of "+x+" is: ",fact(x));
+        function fact(x)
+        {
+            let r=1;
+            if(x==0)
+               return 1;
+            for(let i=2;i<=x;i++)
+               r=r*i;
+            return r;
+        }
+
+    </script>
+</body>
+</html>
