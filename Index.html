@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX POST Request</title>
+</head>
+<body>
+    <h1>AJAX POST Request</h1>
+    <button onclick="sendData()">Send Data</button>
+    <script>
+        function sendData() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:3000/api/data", true);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.write(JSON.parse(xhr.responseText));
+                }
+            };
+            var data = JSON.stringify({ name: "John Doe", age: 30 });
+            xhr.send(data);
+        }
+    </script>
+</body>
+</html>
